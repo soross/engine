@@ -75,7 +75,7 @@ describe Locomotive::Steam::Middlewares::Cache do
 
           context 'page is a redirection' do
 
-            let(:page) { instance_double('CachedPage', _id: '0042', cache_enabled: page_cache, redirect_url: 'http://locomotive.works') }
+            let(:page) { instance_double('CachedPage', _id: '0042', cache_enabled: page_cache, redirect_url: 'http://localhost') }
             it { expect(subject).to eq false }
 
           end
