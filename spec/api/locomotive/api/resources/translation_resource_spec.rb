@@ -14,7 +14,7 @@ describe Locomotive::API::Resources::TranslationResource do
   end
 
   context 'no authenticated site' do
-    describe "GET /locomotive/acme/api/v3/translations.json" do
+    describe "GET /jl/acme/api/v3/translations.json" do
       context 'JSON' do
         it 'returns unauthorized message' do
           get "#{url_prefix}.json"
