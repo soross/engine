@@ -1,7 +1,7 @@
 - title t('.title')
 
 = content_for :header do
-  = render 'locomotive/shared/account_navigation'
+  = render 'jl/shared/account_navigation'
 
 .public-box
   .public-intro
@@ -10,5 +10,5 @@
   = locomotive_form_for @account, url: my_account_path, html: { multipart: true }, defaults: { placeholder: false } do |f|
     = hidden_field_tag :active_tab, ''
     = f.action class: 'hide'
-    = render 'locomotive/my_account/form/tabs', f: f
-    = render 'locomotive/my_account/form/panes', f: f
+    = render 'jl/my_account/form/tabs', f: f
+    = render 'jl/my_account/form/panes', f: f
