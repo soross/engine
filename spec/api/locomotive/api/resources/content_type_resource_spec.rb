@@ -4,7 +4,7 @@ describe Locomotive::API::Resources::ContentTypeResource do
 
   include_context 'api site setup'
 
-  let(:url_prefix) { '/locomotive/acmi/api/v3/content_types' }
+  let(:url_prefix) { '/jl/acmi/api/v3/content_types' }
   let!(:content_type) { create(:content_type, :with_field) }
 
   context 'authenticated site' do
