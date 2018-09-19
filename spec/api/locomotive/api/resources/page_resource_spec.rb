@@ -5,7 +5,7 @@ describe Locomotive::API::Resources::PageResource do
   include_context 'api site setup'
 
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/pages' }
+  let(:url_prefix) { '/jl/acmi/api/v3/pages' }
   let(:page) { create(:page, :index, site: site) }
 
   context 'authenticated site' do
