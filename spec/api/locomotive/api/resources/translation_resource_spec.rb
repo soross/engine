@@ -6,7 +6,7 @@ describe Locomotive::API::Resources::TranslationResource do
 
   let!(:translation) { Timecop.freeze(Time.zone.local(2015, 4, 1, 12, 0, 0)) { create(:translation, site: site) } }
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/translations' }
+  let(:url_prefix) { '/jl/acmi/api/v3/translations' }
 
   let(:translation_hash) do
     values = translation.values.stringify_keys
