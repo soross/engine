@@ -10,7 +10,7 @@ describe Locomotive::API::Resources::TokenResource do
     describe 'POST create' do
       context 'JSON' do
         before do
-          post('/locomotive/api/v3/tokens.json', { email: account.email, password: 'easyone' })
+          post('/jl/api/v3/tokens.json', { email: account.email, password: 'easyone' })
         end
 
         subject { last_response }
