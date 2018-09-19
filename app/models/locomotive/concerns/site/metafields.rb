@@ -64,7 +64,7 @@ module Locomotive
 
         def metafields_schema_schema
           {
-            'id' => 'http://locomotive.works/schemas/metafields.json',
+            'id' => 'http://localhost/schemas/metafields.json',
             'definitions' => {
               'field' => {
                 'type' => 'object',
