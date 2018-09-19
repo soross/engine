@@ -5,7 +5,7 @@ describe Locomotive::API::Resources::MembershipResource do
   include_context 'api site setup'
 
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/memberships' }
+  let(:url_prefix) { '/jl/acmi/api/v3/memberships' }
   let(:target_account) { create(:account, email: 'ex@example.com')}
 
   context 'authenticated site' do
