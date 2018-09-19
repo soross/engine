@@ -8,7 +8,7 @@ module Locomotive
         included do
 
           ## fields ##
-          field :timezone_name, type: ::String, default: 'UTC'
+          field :timezone_name, type: ::String, default: 'Beijing'
 
           # ## validations ##
           validate :wrong_timezone_name
