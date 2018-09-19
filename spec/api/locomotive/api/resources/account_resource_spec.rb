@@ -5,7 +5,7 @@ describe Locomotive::API::Resources::AccountResource do
   include_context 'api site setup'
 
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/api/v3/accounts' }
+  let(:url_prefix) { '/jl/api/v3/accounts' }
   let!(:new_account) { create(:account, email: 'abc@example.com', name: 'Lisa Johnson') }
 
   context 'authenticated site as super admin' do
