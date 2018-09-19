@@ -1,4 +1,4 @@
-describe 'locomotive/my_account/edit', type: :view do
+describe 'jl/my_account/edit', type: :view do
 
   helper(Locomotive::BaseHelper, Locomotive::Shared::AccountsHelper, Locomotive::MyAccountHelper, Locomotive::Engine.routes.url_helpers)
   helper(Locomotive::TestViewHelpers)
@@ -20,7 +20,7 @@ describe 'locomotive/my_account/edit', type: :view do
 
     it 'renders the url to generate a new API key' do
       expect(subject).to include('<legend><span>api</span></legend>')
-      expect(subject).to include('data-url="/locomotive/my_account/regenerate_api_key"')
+      expect(subject).to include('data-url="/jl/my_account/regenerate_api_key"')
     end
 
   end
