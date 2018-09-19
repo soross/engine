@@ -22,7 +22,7 @@ describe Locomotive::Concerns::MembershipController do
     allow(my_controller).to receive(:request).and_return(request)
     allow(my_controller).to receive(:current_locomotive_account).and_return(account)
     allow(my_controller).to receive(:sign_out).with(account)
-    allow(my_controller).to receive(:new_locomotive_account_session_url).and_return('/locomotive/session/new')
+    allow(my_controller).to receive(:new_locomotive_account_session_url).and_return('/jl/session/new')
   end
 
   context 'when a site is present' do
@@ -60,7 +60,7 @@ describe Locomotive::Concerns::MembershipController do
       end
 
       it 'redirects to the new session url' do
-        expect(my_controller).to receive(:redirect_to).with('/locomotive/session/new')
+        expect(my_controller).to receive(:redirect_to).with('/jl/session/new')
         my_controller.send(:validate_site_membership)
       end
 
@@ -89,7 +89,7 @@ describe Locomotive::Concerns::MembershipController do
     end
 
     it 'redirects to the new session url' do
-      expect(my_controller).to receive(:redirect_to).with('/locomotive/session/new')
+      expect(my_controller).to receive(:redirect_to).with('/jl/session/new')
       my_controller.send(:validate_site_membership)
     end
 
