@@ -2,8 +2,8 @@
 
 describe Locomotive::Middlewares::Site do
 
-  let(:site)        { create('existing site', domains: ['steve.me']) }
-  let(:url)         { 'http://example.com/locomotive/models' }
+  let(:site)        { create('existing site', domains: ['http://localhost']) }
+  let(:url)         { 'http://localhost/jl/models' }
   let(:app)         { ->(env) { [200, env, 'app'] } }
   let(:middleware)  { described_class.new(app) }
 
@@ -25,7 +25,7 @@ describe Locomotive::Middlewares::Site do
       subject { middleware.call(rack_env) }
 
       it { expect(subject.first).to eq 404 }
-      it { expect(subject.last.body).to match(/Site not found \| Locomotive/) }
+      it { expect(subject.last.body).to match(/Site not found \| jl/) }
 
       it 'has to escape the host to prevent XSS attacks (by setting the X-Forwarded-Host header)' do
         allow_any_instance_of(ActionDispatch::Request).to receive(:host).and_return('<script>alert(1)</script>')
@@ -37,7 +37,7 @@ describe Locomotive::Middlewares::Site do
         before { allow(Locomotive.config).to receive(:host).and_return('example.com') }
 
         it { expect(subject.first).to eq 301 }
-        it { expect(subject[1]['Location']).to eq '/locomotive/sign_in' }
+        it { expect(subject[1]['Location']).to eq '/jl/sign_in' }
 
       end
 
@@ -54,14 +54,14 @@ describe Locomotive::Middlewares::Site do
     it { expect(subject.first).to eq 301 }
 
     context 'default config' do
-      it { expect(subject[1]['Location']).to eq '/locomotive/sign_up' }
+      it { expect(subject[1]['Location']).to eq '/jl/sign_up' }
     end
 
     context 'config enable_registration set to false' do
 
       before { allow(Locomotive.config).to receive(:enable_registration).and_return(false) }
 
-      it { expect(subject[1]['Location']).to eq '/locomotive/sign_in' }
+      it { expect(subject[1]['Location']).to eq '/jl/sign_in' }
     end
 
   end
@@ -71,7 +71,7 @@ describe Locomotive::Middlewares::Site do
     before { site }
     before { allow(middleware).to receive(:default_host).and_return('steve.me') }
 
-    let(:url) { 'http://steve.me/assets/foo.png' }
+    let(:url) { 'http://localhost/assets/foo.png' }
     it { is_expected.to eq(nil) }
 
     context 'localhost' do
@@ -97,21 +97,21 @@ describe Locomotive::Middlewares::Site do
 
     context 'home page' do
 
-      let(:url) { 'http://steve.me' }
+      let(:url) { 'http://localhost' }
       it { expect(subject.name).to eq('Locomotive site with existing models') }
 
     end
 
     context 'about page' do
 
-      let(:url) { 'http://steve.me/about' }
+      let(:url) { 'http://localhost/about' }
       it { expect(subject.name).to eq('Locomotive site with existing models') }
 
     end
 
     context 'locomotive app section' do
 
-      let(:url) { 'http://steve.me/locomotive/sites' }
+      let(:url) { 'http://localhost/jl/sites' }
       it { is_expected.to eq(nil) }
 
     end
@@ -127,7 +127,7 @@ describe Locomotive::Middlewares::Site do
 
     context 'fetching from the host' do
 
-      let(:url) { 'http://steve.me/about' }
+      let(:url) { 'http://localhost/about' }
 
       it { expect(subject.name).to eq('Locomotive site with existing models') }
 
