@@ -4,7 +4,7 @@ describe Locomotive::API::Resources::SnippetResource do
 
   include_context 'api site setup'
 
-  let(:url_prefix) { '/locomotive/acmi/api/v3/snippets' }
+  let(:url_prefix) { '/jl/acmi/api/v3/snippets' }
   let!(:snippet) { create(:snippet) }
 
   context 'authenticated site' do
