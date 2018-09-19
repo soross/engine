@@ -6,7 +6,7 @@ describe Locomotive::API::Resources::SiteResource do
 
   let(:locale) { :en }
   let(:params) { { locale: locale } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/sites' }
+  let(:url_prefix) { '/jl/acmi/api/v3/sites' }
 
   context 'authenticated site' do
     include_context 'api header setup'
