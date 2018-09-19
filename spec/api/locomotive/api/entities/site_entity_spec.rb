@@ -31,7 +31,7 @@ describe Locomotive::API::Entities::SiteEntity do
 
     describe 'timezones' do
       it 'returns the timezone name' do
-        expect(exposure[:timezone]).to eq 'UTC'
+        expect(exposure[:timezone]).to eq 'Beijing'
       end
     end
 
