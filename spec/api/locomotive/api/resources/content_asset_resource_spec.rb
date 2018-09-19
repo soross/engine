@@ -6,7 +6,7 @@ describe Locomotive::API::Resources::ContentAssetResource do
 
   let!(:asset) { create(:asset, site: site, source: rack_theme_image('rails.png')) }
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/content_assets' }
+  let(:url_prefix) { '/jl/acmi/api/v3/content_assets' }
 
   context 'authenticated site' do
     include_context 'api header setup'
