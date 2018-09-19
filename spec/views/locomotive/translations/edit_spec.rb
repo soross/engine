@@ -17,7 +17,7 @@ describe 'locomotive/translations/edit', type: :view do
 
   it 'renders something without an exception' do
     expect {
-      expect(subject).to include(%(<a href="/locomotive/test/translations?filter_by=untranslated&amp;q=hell">))
+      expect(subject).to include(%(<a href="/jl/test/translations?filter_by=untranslated&amp;q=hell">))
     }.to_not raise_error
   end
 
