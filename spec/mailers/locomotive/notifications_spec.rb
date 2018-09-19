@@ -79,7 +79,7 @@ describe Locomotive::Notifications do
   end
 
   def set_timezone(&block)
-    Time.use_zone(site.try(:timezone) || 'UTC', &block)
+    Time.use_zone(site.try(:timezone) || 'Beijing', &block)
   end
 
 end
