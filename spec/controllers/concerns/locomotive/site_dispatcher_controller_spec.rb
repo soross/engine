@@ -47,12 +47,12 @@ describe Locomotive::Concerns::SiteDispatcherController do
     end
 
     before do
-      routes.draw { get 'test_render_no_site' => 'locomotive/base#test_render_no_site' }
+      routes.draw { get 'test_render_no_site' => 'jl/base#test_render_no_site' }
     end
 
     it 'redirects to the list of sites page' do
       get :test_render_no_site
-      expect(response).to redirect_to '/locomotive/sites'
+      expect(response).to redirect_to '/jl/sites'
     end
 
   end
