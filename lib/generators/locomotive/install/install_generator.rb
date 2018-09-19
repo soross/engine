@@ -27,10 +27,10 @@ module Locomotive
     def insert_engine_routes
       route %(
   # Locomotive Back-office
-  mount Locomotive::Engine => '/locomotive', as: 'locomotive' # you can change the value of the path, by default set to "/locomotive"
+  mount Locomotive::Engine => '/jl', as: 'locomotive' # you can change the value of the path, by default set to "/locomotive"
 
   # Locomotive API
-  mount Locomotive::API.to_app => '/locomotive(/:site_handle)/api'
+  mount Locomotive::API.to_app => '/jl(/:site_handle)/api'
 
   # Render site
   mount Locomotive::Steam.to_app => '/', anchor: false)
