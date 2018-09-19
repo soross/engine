@@ -5,7 +5,7 @@ module Locomotive
       protected
 
       def set_timezone(&block)
-        Time.use_zone(current_site.try(:timezone) || 'UTC', &block)
+        Time.use_zone(current_site.try(:timezone) || 'Beijing', &block)
       end
 
     end
