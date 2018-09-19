@@ -5,7 +5,7 @@ describe Locomotive::API::Resources::UrlRedirectionResource do
   include_context 'api site setup'
 
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/url_redirections' }
+  let(:url_prefix) { '/jl/acmi/api/v3/url_redirections' }
 
   context 'unknown site' do
     include_context 'api header setup'
