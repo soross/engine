@@ -6,7 +6,7 @@ describe Locomotive::API::Resources::ContentEntryResource do
 
   let(:content_type) { create('article content type', :with_select_field_and_options, site: site) }
   let!(:content_entry) { content_type.entries.create(title: 'Hello world', body: 'Lorem ipsum', site: site) }
-  let(:url_prefix) { "/locomotive/acmi/api/v3/content_types/#{content_type.slug}/entries" }
+  let(:url_prefix) { "/jl/acmi/api/v3/content_types/#{content_type.slug}/entries" }
 
   context 'authenticated site' do
     include_context 'api header setup'
