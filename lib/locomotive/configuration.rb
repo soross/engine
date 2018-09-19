@@ -17,7 +17,7 @@ module Locomotive
       enable_logs:                  false,
       enable_admin_ssl:             false,
       delayed_job:                  false,
-      default_locale:               :en,
+      default_locale:               :"zh-CN",
       mailer_sender:                'support@example.com',
       unsafe_token_authentication:  false,
       enable_registration:          true,
