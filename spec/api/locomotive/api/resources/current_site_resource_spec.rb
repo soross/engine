@@ -5,7 +5,7 @@ describe Locomotive::API::Resources::CurrentSiteResource do
   include_context 'api site setup'
 
   let(:params) { { locale: :en } }
-  let(:url_prefix) { '/locomotive/acmi/api/v3/current_site' }
+  let(:url_prefix) { '/jl/acmi/api/v3/current_site' }
 
   context 'unknown site' do
     include_context 'api header setup'
@@ -32,8 +32,8 @@ describe Locomotive::API::Resources::CurrentSiteResource do
         before { get "#{url_prefix}.json" }
         it 'returns the current site' do
           expect(parsed_response[:name]).to eq(site.name)
-          expect(parsed_response[:preview_url]).to eq('http://example.org/locomotive/acme/preview')
-          expect(parsed_response[:sign_in_url]).to eq('http://example.org/locomotive/sign_in')
+          expect(parsed_response[:preview_url]).to eq('http://example.org/jl/acme/preview')
+          expect(parsed_response[:sign_in_url]).to eq('http://example.org/jl/sign_in')
         end
       end
     end
