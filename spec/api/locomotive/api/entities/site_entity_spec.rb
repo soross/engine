@@ -43,13 +43,13 @@ describe Locomotive::API::Entities::SiteEntity do
 
     describe 'preview_url' do
       it 'returns the url to preview the site' do
-        expect(exposure[:preview_url]).to eq 'http://localhost:8080/locomotive/acme/preview'
+        expect(exposure[:preview_url]).to eq 'http://localhost:8080/jl/acme/preview'
       end
     end
 
     describe 'sign_in_url' do
       it 'returns the url to sign in to the site' do
-        expect(exposure[:sign_in_url]).to eq 'http://localhost:8080/locomotive/sign_in'
+        expect(exposure[:sign_in_url]).to eq 'http://localhost:8080/jl/sign_in'
       end
     end
   end
