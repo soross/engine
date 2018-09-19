@@ -30,7 +30,7 @@ module Features
     end
 
     def preview_page(path = '')
-      visit "/locomotive/#{@site.handle}/preview/#{path}"
+      visit "/jl/#{@site.handle}/preview/#{path}"
     end
 
   end
