@@ -162,7 +162,7 @@ zh-CN:
     registrations:
       new:
         confirm_password: 确认密码
-        description: "创建账户然后开始使用Locomotive"
+        description: "创建账户然后开始使用"
         sign_in: 已有账户？
         submit: 注册
         title: 注册
@@ -198,7 +198,7 @@ zh-CN:
           temporary: "Temporary (302)"
     editable_elements:
       index:
-        redirection_error: "非Locomotive页面不允许编辑。"
+        redirection_error: "页面不允许编辑。"
         iframe:
           buttons:
             edit: 编辑
